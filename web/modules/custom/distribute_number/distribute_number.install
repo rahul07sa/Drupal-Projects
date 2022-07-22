@@ -1,0 +1,36 @@
+<?php
+
+use Drupal\Core\Database\Database;
+ 
+/**
+ * Implements hook_schema().
+ */
+function distribute_number_schema(){
+    $schema['distribute'] = array(
+        'description' => 'The table for storing the distributed number data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for row',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'name' => array(
+                'description' => 'name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+          
+            'dnumber' => array(
+                'description' => 'dnumber',
+                'type' => 'int',
+                'length' => 100,
+                'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

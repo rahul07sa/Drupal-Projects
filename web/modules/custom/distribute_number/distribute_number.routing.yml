@@ -1,0 +1,31 @@
+distribute_number.numbermanage:
+  path: '/manageshare'
+  defaults:
+    _title: 'Distribute'
+    _controller: '\Drupal\distribute_number\Controller\DistributeController::managenumber'
+  requirements:
+    _permission: 'administer distribute'
+    
+distribute_number.delete_number_ajax:
+  path: '/del/distribute_number/distribute/delete/{cid}'
+  defaults:
+    _controller: '\Drupal\distribute_number\Controller\DistributeController::deleteNumberAjax'
+    _title: 'Delete Number'
+  requirements:
+    _permission: 'administer distribute'
+
+distribute_number.edit_number_ajax:
+  path: '/ajax/distribute_number/distribute/edit/{cid}'
+  defaults:
+    _controller: '\Drupal\distribute_number\Controller\DistributeController::editNumberAjax'
+    _title: 'Edit Number'
+  requirements:
+    _permission: 'administer distribute'
+    
+distribute_number.pagination_number_ajax:
+  path: '/ajax/distribute_number/table/page/{no}'
+  defaults:
+    _controller: '\Drupal\distribute_number\Controller\DistributeController::tablePaginationAjax'
+    _title: 'Table Pagination Number'
+  requirements:
+    _permission: 'administer distribute'
